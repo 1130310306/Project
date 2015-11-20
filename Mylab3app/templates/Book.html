@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<link href="/t/static/css/bootstrap.min.css", rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Book</title>
+    <style>
+        body{
+            padding-top:50px;
+        }
+        .starter{
+            padding:14px 50px;
+            text-align: center;
+        }
+    </style>
+<body background="/static/images/bg2.jpg">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <a href="http://127.0.0.1:8000/home/" class="navbar-brand">Home</a>
+	        </div>
+	        <div id="navbar1" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+	                <li class="active"><a href="http://127.0.0.1:8000/book/">Book</a></li>
+	                <li class="active"><a href="http://127.0.0.1:8000/author/">Author</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+	<h1 class="alert-danger text-center">All Books：</h1>
+	<a href="http://127.0.0.1:8000/addbook/" class="btn-group bg-danger">Add A New Book In The Library</a>
+	<div class="container">
+        <div class="starter">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+		            <thead>
+		                <tr class="info">
+		                    <td>ISBN</td>
+		                    <td>Title</td>
+		                    <td>Author</td>
+		                    <td>更新操作</td>
+                            <td>删除操作</td>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                {%for abook in book_list%}
+		                <tr>
+		                    <td>{{ abook.ISBN }}</td>
+		                    <td><a href="/details/?id={{abook.id}}">{{ abook.Title }}</a></td>
+		                    <td>{{ abook.AuthorID }}</td>
+		                    <td><a href="/update/?id={{abook.id}}" class="btn btn-primary btn-sm active" role="button">Update</a></td>
+		                    <td><a href="/delete/?id={{abook.id}}" class="btn btn-danger btn-sm active" role="button">Delete</a></td>
+		                </tr>
+		                {% endfor %}
+		            </tbody>
+		        </table>
+		    </div>
+        </div>
+    </div>  
+</body>
+</html>

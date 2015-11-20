@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="/t/static/css/bootstrap.min.css", rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Book</title>
+    <style>
+        body{
+            padding-top:50px;
+        }
+        .starter{
+            padding:14px 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body background="/static/images/bg2.jpg">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="http://127.0.0.1:8000/home/" class="navbar-brand">Home</a>
+            </div>
+            <div id="navbar1" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="http://127.0.0.1:8000/book/">Book</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/author/">Author</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="starter">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr class="info">
+                            <td>ISBN</td>
+                            <td>Title</td>
+                            <td>AuthorID</td>
+                            <td>Publisher</td>
+                            <td>PublishDate</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{dtbook.ISBN}}</td>
+                            <td>{{dtbook.Title}}</td>
+                            <td>{{dtbook.AuthorID}}</td>
+                            <td>{{dtbook.Publisher}}</td>
+                            <td>{{dtbook.PublishDate}}</td>
+                            <td>{{dtbook.Price}}</td>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  
+    <div class="container">
+        <div class="starter1">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr class="info">
+                            <td>AuthorID</td>
+                            <td>Name</td>
+                            <td>Age</td>
+                            <td>Country</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{dtauthor.AuthorID}}</td>
+                            <td>{{dtauthor.Name}}</td>
+                            <td>{{dtauthor.Age}}</td>
+                            <td>{{dtauthor.Country}}</td>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
